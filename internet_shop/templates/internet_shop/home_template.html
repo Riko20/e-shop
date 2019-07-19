@@ -1,0 +1,62 @@
+{% extends 'internet_shop/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="section-top">
+    <img src="{% static 'images/slider.png' %}" class="img-responsive" width="1600px">
+
+</div>
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-4 col-lg-offset-4">-->
+<!--            <h1 class="title">Wait for opening of our shop</h1>-->
+<!--            <h1>See you soon</h1>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<form action="" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {{ forma.as_p }}-->
+<!--    <button type="submit" class="btn btn-primary" >Approve</button>-->
+<!--</form>-->
+
+<link rel="stylesheet" href="{% static 'style.css' %}" />
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            {% for product in products %}
+                 <div class="col-lg-3">
+                     <div class="product-item">
+                         <div>
+                             <img src="/" class="image-responsive"/>
+                         </div>
+                         <h4>{{product.name}}</h4>
+                         <p>{{product.description|truncatechars_html:100}}</p>
+                         <div class="add-to-card-btn">
+                            <button class="btn btn-success">В кошик</button>
+                         </div>
+                         <p>{{product.price}} $</p>
+
+                     </div>
+                </div>
+            {% endfor %}
+            <div class="col-lg-3">
+                Djinger
+            </div>
+
+            <div class="col-lg-3">
+                Djinger
+            </div>
+
+            <div class="col-lg-3">
+                Djinger
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
